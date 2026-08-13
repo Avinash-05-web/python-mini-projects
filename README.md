@@ -1,6 +1,6 @@
 # 🐍 Python Mini Projects
 
-A collection of practical Python projects created while learning Python programming, automation, networking, and cybersecurity fundamentals.
+A collection of practical Python projects created while learning Python programming, automation, networking, GUI development, and cybersecurity fundamentals.
 
 The goal of this repository is to build small, useful projects while gradually moving from beginner concepts to more advanced applications.
 
@@ -8,13 +8,13 @@ The goal of this repository is to build small, useful projects while gradually m
 
 ## 📂 Projects
 
-| #  | Project                                         | Description                                                    | Technologies            | Status         |
-| -- | ----------------------------------------------- | -------------------------------------------------------------- | ----------------------- | -------------- |
-| 01 | 🔍 [Port Scanner](./01_port_scanner/)           | Scan TCP ports on an authorized device and identify open ports | Python, Socket          | ✅ Completed    |
-| 02 | 📱 [QR Code Generator](./02_qr_code_generator/) | Generate QR codes from URLs or text                            | Python, qrcode, Tkinter | ✅ Completed    |
-| 03 | 🔐 Password Generator                           | Generate secure random passwords                               | Python                  | 🔜 Coming Soon |
-| 04 | 📁 File Organizer                               | Automatically organize files by extension                      | Python, OS              | 🔜 Coming Soon |
-| 05 | 🌐 Website Status Checker                       | Check whether websites are reachable                           | Python, Requests        | 🔜 Coming Soon |
+| #  | Project                                         | Description                                                    | Technologies                    | Status         |
+| -- | ----------------------------------------------- | -------------------------------------------------------------- | ------------------------------- | -------------- |
+| 01 | 🔍 [Port Scanner](./01_port_scanner/)           | Scan TCP ports on an authorized device and identify open ports | Python, Socket                  | ✅ Completed    |
+| 02 | 📱 [QR Code Generator](./02_qr_code_generator/) | Generate QR codes from URLs or text                            | Python, qrcode, Tkinter         | ✅ Completed    |
+| 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                              | Python, secrets, string         | ✅ Completed    |
+| 04 | 📁 File Organizer                               | Automatically organize files by extension                      | Python, OS                      | 🔜 Coming Soon |
+| 05 | 🌐 Website Status Checker                       | Check whether websites are reachable                           | Python, Requests                | 🔜 Coming Soon |
 
 ---
 
@@ -66,7 +66,7 @@ Go to the project directory:
 
 ```bash
 cd 02_qr_code_generator
-```
+````
 
 Install the required package:
 
@@ -84,6 +84,70 @@ python qr_generator.py
 
 ---
 
+# 🔐 Project 03 — Secure Password Generator
+
+A secure and customizable password generator built using Python's `secrets` module.
+
+The project generates strong random passwords with support for uppercase letters, lowercase letters, numbers, optional symbols, and password strength detection.
+
+### Features
+
+* Custom password length
+* Lowercase letters
+* Uppercase letters
+* Numbers
+* Optional symbols
+* Password strength detection
+* Input validation
+* Secure character shuffling
+* Uses Python's `secrets` module
+* No external packages required
+
+### Technologies
+
+* Python
+* secrets
+* string
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 03_password_generator
+```
+
+No additional packages are required.
+
+### Run
+
+```bash
+python password_generator.py
+```
+
+### Example
+
+```text
+==================================================
+          SECURE PASSWORD GENERATOR
+==================================================
+
+Enter password length: 16
+Include symbols? (y/n): y
+
+==================================================
+Generated Password:
+7@qL2!vX9#pK4$mN
+==================================================
+
+Password Length : 16
+Password Strength: Very Strong
+```
+
+[View Password Generator →](./03_password_generator/)
+
+---
+
 # 📈 Learning Progress
 
 This repository represents my hands-on Python learning journey.
@@ -98,7 +162,7 @@ This repository represents my hands-on Python learning journey.
 * [x] Functions
 * [x] Modules
 * [x] File paths
-* [ ] Exception handling
+* [x] Exception handling
 * [ ] Object-oriented programming
 * [ ] APIs
 * [ ] Multithreading
@@ -108,12 +172,17 @@ This repository represents my hands-on Python learning journey.
 
 * [x] Basic TCP socket programming
 * [x] Port scanning fundamentals
+* [x] Secure random generation
+* [x] Password generation
 * [ ] Service detection
 * [ ] Banner grabbing
 * [ ] DNS tools
 * [ ] Network automation
 * [ ] Log analysis
 * [ ] Security automation
+* [ ] Cryptography fundamentals
+* [ ] Hashing
+* [ ] Encryption
 
 ## GUI Development
 
@@ -131,7 +200,6 @@ This repository represents my hands-on Python learning journey.
 
 Some projects planned for this repository:
 
-* 🔐 Password Generator
 * 📁 File Organizer
 * 🌐 Website Status Checker
 * 🔎 DNS Lookup Tool
@@ -141,6 +209,8 @@ Some projects planned for this repository:
 * 🖥️ System Information Tool
 * 🔗 URL Utilities
 * 📡 Network Utilities
+* 🔐 File Encryption Tool
+* 📊 Password Strength Analyzer
 
 More projects will be added as I continue learning.
 
@@ -181,6 +251,28 @@ Choose a project and follow its individual README.
 
 ---
 
+# 📁 Repository Structure
+
+```text
+python-mini-projects/
+│
+├── README.md
+│
+├── 01_port_scanner/
+│   ├── port_scanner.py
+│   └── README.md
+│
+├── 02_qr_code_generator/
+│   ├── qr_generator.py
+│   └── README.md
+│
+└── 03_password_generator/
+    ├── password_generator.py
+    └── README.md
+```
+
+---
+
 # ⚠️ Ethical & Legal Disclaimer
 
 Some projects in this repository involve networking or cybersecurity concepts.
@@ -199,6 +291,24 @@ The author is not responsible for misuse of these projects.
 
 ---
 
+# 🔐 Security Notice
+
+Never commit sensitive information to this repository.
+
+Do not upload:
+
+* Passwords
+* API keys
+* Access tokens
+* Private keys
+* Authentication credentials
+* Personal secrets
+* `.env` files containing secrets
+
+If a project requires credentials or API keys, use environment variables or another secure configuration method.
+
+---
+
 # 👨‍💻 Author
 
 **Avinash Das Manikpuri**
@@ -212,3 +322,4 @@ GitHub: [@Avinash-05-web](https://github.com/Avinash-05-web)
 If you find this repository useful, consider giving it a ⭐ on GitHub.
 
 More projects coming soon! 🚀
+
