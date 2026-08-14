@@ -8,13 +8,13 @@ The goal of this repository is to build small, useful projects while gradually m
 
 ## 📂 Projects
 
-| #  | Project                                         | Description                                                    | Technologies                    | Status         |
-| -- | ----------------------------------------------- | -------------------------------------------------------------- | ------------------------------- | -------------- |
-| 01 | 🔍 [Port Scanner](./01_port_scanner/)           | Scan TCP ports on an authorized device and identify open ports | Python, Socket                  | ✅ Completed    |
-| 02 | 📱 [QR Code Generator](./02_qr_code_generator/) | Generate QR codes from URLs or text                            | Python, qrcode, Tkinter         | ✅ Completed    |
-| 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                              | Python, secrets, string         | ✅ Completed    |
-| 04 | 📁 File Organizer                               | Automatically organize files by extension                      | Python, OS                      | 🔜 Coming Soon |
-| 05 | 🌐 Website Status Checker                       | Check whether websites are reachable                           | Python, Requests                | 🔜 Coming Soon |
+| #  | Project                                           | Description                                                    | Technologies                    | Status         |
+| -- | ------------------------------------------------- | -------------------------------------------------------------- | ------------------------------- | -------------- |
+| 01 | 🔍 [Port Scanner](./01_port_scanner/)             | Scan TCP ports on an authorized device and identify open ports | Python, Socket                  | ✅ Completed    |
+| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)   | Generate QR codes from URLs or text                            | Python, qrcode, Tkinter         | ✅ Completed    |
+| 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                               | Python, secrets, string         | ✅ Completed    |
+| 04 | 📁 [File Organizer](./04_file_organizer/)         | Automatically organize files by extension                      | Python, OS, shutil              | ✅ Completed    |
+| 05 | 🌐 Website Status Checker                         | Check whether websites are reachable                           | Python, Requests                | 🔜 Coming Soon |
 
 ---
 
@@ -125,26 +125,62 @@ No additional packages are required.
 python password_generator.py
 ```
 
-### Example
+[View Password Generator →](./03_password_generator/)
 
-```text
-==================================================
-          SECURE PASSWORD GENERATOR
-==================================================
+---
 
-Enter password length: 16
-Include symbols? (y/n): y
+# 📁 Project 04 — File Organizer
 
-==================================================
-Generated Password:
-7@qL2!vX9#pK4$mN
-==================================================
+A Python automation tool that automatically organizes files into folders based on their file extensions.
 
-Password Length : 16
-Password Strength: Very Strong
+The program can sort images, videos, documents, audio files, archives, programming files, and unknown file types.
+
+### Features
+
+* Automatically organize files
+* Sort images
+* Sort videos
+* Sort documents
+* Sort audio files
+* Sort archives
+* Sort programming files
+* Create category folders automatically
+* Move unknown file types to an `Others` folder
+* Check whether the selected folder exists
+* Ignore existing folders
+* No external packages required
+
+### Technologies
+
+* Python
+* `os`
+* `shutil`
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 04_file_organizer
 ```
 
-[View Password Generator →](./03_password_generator/)
+No additional packages are required.
+
+### Run
+
+```bash
+python file_organizer.py
+```
+
+The program will ask for the folder you want to organize.
+
+Example:
+
+```text
+Enter the folder path to organize: C:\Users\YourName\Downloads
+```
+
+[View File Organizer →](./04_file_organizer/)
 
 ---
 
@@ -194,13 +230,22 @@ This repository represents my hands-on Python learning journey.
 * [ ] Advanced GUI layouts
 * [ ] Custom themes
 
+## Automation
+
+* [x] File organization
+* [x] File extension detection
+* [x] Directory creation
+* [x] File movement
+* [ ] Duplicate file detection
+* [ ] Automated file monitoring
+* [ ] Advanced automation workflows
+
 ---
 
 # 🚀 Upcoming Projects
 
 Some projects planned for this repository:
 
-* 📁 File Organizer
 * 🌐 Website Status Checker
 * 🔎 DNS Lookup Tool
 * 📊 Log Analyzer
@@ -211,6 +256,9 @@ Some projects planned for this repository:
 * 📡 Network Utilities
 * 🔐 File Encryption Tool
 * 📊 Password Strength Analyzer
+* 🌐 HTTP Header Checker
+* 📂 Duplicate File Finder
+* 🧹 File Cleanup Utility
 
 More projects will be added as I continue learning.
 
@@ -227,6 +275,12 @@ Check your Python version:
 
 ```bash
 python --version
+```
+
+If your system uses `python3`:
+
+```bash
+python3 --version
 ```
 
 Some projects may require additional Python packages. Each project contains its own `README.md` with installation and usage instructions.
@@ -266,16 +320,74 @@ python-mini-projects/
 │   ├── qr_generator.py
 │   └── README.md
 │
-└── 03_password_generator/
-    ├── password_generator.py
+├── 03_password_generator/
+│   ├── password_generator.py
+│   └── README.md
+│
+└── 04_file_organizer/
+    ├── file_organizer.py
     └── README.md
 ```
 
 ---
 
+# 🎯 Purpose of This Repository
+
+This repository is being developed as a practical Python learning portfolio.
+
+Instead of only learning Python through tutorials and theory, I am building small projects to practice:
+
+* Programming fundamentals
+* Problem solving
+* Automation
+* Networking
+* GUI development
+* Security programming
+* Python modules
+* File handling
+* Real-world application development
+
+Each project is added as I learn a new concept.
+
+---
+
+# 📚 Project Progress
+
+### Project 01 — Port Scanner
+
+**Focus:** Networking and socket programming
+
+**Status:** ✅ Completed
+
+### Project 02 — QR Code Generator
+
+**Focus:** Python libraries and GUI development
+
+**Status:** ✅ Completed
+
+### Project 03 — Secure Password Generator
+
+**Focus:** Secure random generation and basic security programming
+
+**Status:** ✅ Completed
+
+### Project 04 — File Organizer
+
+**Focus:** File handling and automation
+
+**Status:** ✅ Completed
+
+### Project 05 — Website Status Checker
+
+**Focus:** HTTP requests and network automation
+
+**Status:** 🔜 Coming Soon
+
+---
+
 # ⚠️ Ethical & Legal Disclaimer
 
-Some projects in this repository involve networking or cybersecurity concepts.
+Some projects in this repository involve networking and cybersecurity concepts.
 
 **Only use these tools on systems, devices, networks, and applications that you own or have explicit permission to test.**
 
@@ -322,4 +434,3 @@ GitHub: [@Avinash-05-web](https://github.com/Avinash-05-web)
 If you find this repository useful, consider giving it a ⭐ on GitHub.
 
 More projects coming soon! 🚀
-
