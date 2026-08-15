@@ -11,10 +11,11 @@ The goal of this repository is to build small, useful projects while gradually m
 | #  | Project                                           | Description                                                    | Technologies                    | Status         |
 | -- | ------------------------------------------------- | -------------------------------------------------------------- | ------------------------------- | -------------- |
 | 01 | 🔍 [Port Scanner](./01_port_scanner/)             | Scan TCP ports on an authorized device and identify open ports | Python, Socket                  | ✅ Completed    |
-| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)   | Generate QR codes from URLs or text                            | Python, qrcode, Tkinter         | ✅ Completed    |
+| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)   | Generate QR codes from URLs or text                            | Python, qrcode, Pillow, Tkinter | ✅ Completed    |
 | 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                               | Python, secrets, string         | ✅ Completed    |
 | 04 | 📁 [File Organizer](./04_file_organizer/)         | Automatically organize files by extension                      | Python, OS, shutil              | ✅ Completed    |
-| 05 | 🌐 Website Status Checker                         | Check whether websites are reachable                           | Python, Requests                | 🔜 Coming Soon |
+| 05 | 🧾 [Bill Splitter](./05_bill_splitter/)           | Calculate and split bills between multiple people              | Python, Tkinter                 | ✅ Completed    |
+| 06 | 🌐 Website Status Checker                         | Check whether websites are reachable                           | Python, Requests                | 🔜 Coming Soon |
 
 ---
 
@@ -74,7 +75,7 @@ Install the required package:
 pip install qrcode[pil]
 ```
 
-Run:
+### Run
 
 ```bash
 python qr_generator.py
@@ -131,9 +132,7 @@ python password_generator.py
 
 # 📁 Project 04 — File Organizer
 
-A Python automation tool that automatically organizes files into folders based on their file extensions.
-
-The program can sort images, videos, documents, audio files, archives, programming files, and unknown file types.
+A Python automation tool that automatically organizes files into separate folders based on their file extensions.
 
 ### Features
 
@@ -145,7 +144,7 @@ The program can sort images, videos, documents, audio files, archives, programmi
 * Sort archives
 * Sort programming files
 * Create category folders automatically
-* Move unknown file types to an `Others` folder
+* Move unknown file types into an `Others` folder
 * Check whether the selected folder exists
 * Ignore existing folders
 * No external packages required
@@ -172,7 +171,7 @@ No additional packages are required.
 python file_organizer.py
 ```
 
-The program will ask for the folder you want to organize.
+The program will ask for the folder path you want to organize.
 
 Example:
 
@@ -184,11 +183,80 @@ Enter the folder path to organize: C:\Users\YourName\Downloads
 
 ---
 
+# 🧾 Project 05 — Bill Splitter
+
+A simple and user-friendly Python GUI application that calculates a restaurant bill, adds a customizable tip, and splits the final bill between multiple people.
+
+### Features
+
+* Calculate total restaurant bill
+* Split the bill between multiple people
+* Enter appetizer costs
+* Enter main course costs
+* Enter dessert costs
+* Enter drink costs
+* Set a custom tip percentage
+* Display subtotal
+* Calculate tip amount
+* Calculate final bill
+* Calculate amount per person
+* Clear all inputs
+* Handle invalid input
+* GUI-based interface
+* No external packages required
+
+### Technologies
+
+* Python
+* Tkinter
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 05_bill_splitter
+```
+
+No additional packages are required.
+
+### Run
+
+```bash
+python bill_splitter.py
+```
+
+The application will open a graphical window where you can enter the bill details.
+
+### Example
+
+```text
+Number of People: 4
+Appetizers: 37.89
+Main Courses: 57.34
+Desserts: 39.39
+Drinks: 64.21
+Tip Percentage: 25
+```
+
+The application calculates:
+
+```text
+Subtotal:     ₹198.83
+Tip:          ₹49.71
+Total Bill:   ₹248.54
+Per Person:   ₹62.14
+```
+
+[View Bill Splitter →](./05_bill_splitter/)
+
+---
+
 # 📈 Learning Progress
 
 This repository represents my hands-on Python learning journey.
 
-## Python Fundamentals
+## 🐍 Python Fundamentals
 
 * [x] Variables and data types
 * [x] User input
@@ -199,12 +267,13 @@ This repository represents my hands-on Python learning journey.
 * [x] Modules
 * [x] File paths
 * [x] Exception handling
+* [x] Arithmetic operations
 * [ ] Object-oriented programming
 * [ ] APIs
 * [ ] Multithreading
 * [ ] Advanced Python
 
-## Networking & Cybersecurity
+## 🌐 Networking & Cybersecurity
 
 * [x] Basic TCP socket programming
 * [x] Port scanning fundamentals
@@ -220,17 +289,20 @@ This repository represents my hands-on Python learning journey.
 * [ ] Hashing
 * [ ] Encryption
 
-## GUI Development
+## 🖥️ GUI Development
 
 * [x] Basic Tkinter
 * [x] User input fields
 * [x] Buttons
+* [x] Labels
 * [x] Message boxes
 * [x] File dialogs
+* [x] Event-driven programming
 * [ ] Advanced GUI layouts
 * [ ] Custom themes
+* [ ] GUI application packaging
 
-## Automation
+## ⚙️ Automation
 
 * [x] File organization
 * [x] File extension detection
@@ -259,6 +331,8 @@ Some projects planned for this repository:
 * 🌐 HTTP Header Checker
 * 📂 Duplicate File Finder
 * 🧹 File Cleanup Utility
+* 📋 Expense Tracker
+* 📊 System Resource Monitor
 
 More projects will be added as I continue learning.
 
@@ -271,7 +345,7 @@ Most projects require:
 * Python 3.8+
 * pip
 
-Check your Python version:
+Check your Python installation:
 
 ```bash
 python --version
@@ -324,8 +398,12 @@ python-mini-projects/
 │   ├── password_generator.py
 │   └── README.md
 │
-└── 04_file_organizer/
-    ├── file_organizer.py
+├── 04_file_organizer/
+│   ├── file_organizer.py
+│   └── README.md
+│
+└── 05_bill_splitter/
+    ├── bill_splitter.py
     └── README.md
 ```
 
@@ -377,7 +455,13 @@ Each project is added as I learn a new concept.
 
 **Status:** ✅ Completed
 
-### Project 05 — Website Status Checker
+### Project 05 — Bill Splitter
+
+**Focus:** GUI development, calculations, and user input
+
+**Status:** ✅ Completed
+
+### Project 06 — Website Status Checker
 
 **Focus:** HTTP requests and network automation
 
