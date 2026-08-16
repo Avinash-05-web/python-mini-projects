@@ -8,14 +8,15 @@ The goal of this repository is to build small, useful projects while gradually m
 
 ## 📂 Projects
 
-| #  | Project                                           | Description                                                    | Technologies                    | Status         |
-| -- | ------------------------------------------------- | -------------------------------------------------------------- | ------------------------------- | -------------- |
-| 01 | 🔍 [Port Scanner](./01_port_scanner/)             | Scan TCP ports on an authorized device and identify open ports | Python, Socket                  | ✅ Completed    |
-| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)   | Generate QR codes from URLs or text                            | Python, qrcode, Pillow, Tkinter | ✅ Completed    |
-| 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                               | Python, secrets, string         | ✅ Completed    |
-| 04 | 📁 [File Organizer](./04_file_organizer/)         | Automatically organize files by extension                      | Python, OS, shutil              | ✅ Completed    |
-| 05 | 🧾 [Bill Splitter](./05_bill_splitter/)           | Calculate and split bills between multiple people              | Python, Tkinter                 | ✅ Completed    |
-| 06 | 🌐 Website Status Checker                         | Check whether websites are reachable                           | Python, Requests                | 🔜 Coming Soon |
+| #  | Project                                           | Description                                                     | Technologies                    | Status         |
+| -- | ------------------------------------------------- | --------------------------------------------------------------- | ------------------------------- | -------------- |
+| 01 | 🔍 [Port Scanner](./01_port_scanner/)             | Scan TCP ports on an authorized device and identify open ports  | Python, Socket                  | ✅ Completed    |
+| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)   | Generate QR codes from URLs or text                             | Python, qrcode, Pillow, Tkinter | ✅ Completed    |
+| 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                                | Python, secrets, string         | ✅ Completed    |
+| 04 | 📁 [File Organizer](./04_file_organizer/)         | Automatically organize files by extension                       | Python, OS, shutil              | ✅ Completed    |
+| 05 | 🧾 [Bill Splitter](./05_bill_splitter/)           | Calculate and split bills between multiple people               | Python, Tkinter                 | ✅ Completed    |
+| 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                    | Python, urllib, SSL              | ✅ Completed    |
+| 07 | 🔎 DNS Lookup Tool                                 | Look up DNS information for a domain                            | Python                          | 🔜 Coming Soon |
 
 ---
 
@@ -252,11 +253,75 @@ Per Person:   ₹62.14
 
 ---
 
+# 🌐 Project 06 — Website Status Checker
+
+A secure and beginner-friendly Python command-line tool that checks whether websites are reachable over HTTP/HTTPS.
+
+The program validates URLs, checks website connectivity, displays HTTP status codes, measures response time, handles redirects, and safely handles common network and SSL errors.
+
+### Features
+
+* Check whether a website is reachable
+* Support HTTP and HTTPS
+* Validate website URLs
+* Automatically add HTTPS when needed
+* Display HTTP status codes
+* Measure response time
+* Handle redirects
+* Request timeout protection
+* Handle connection errors
+* Handle SSL/TLS errors
+* No external packages required
+
+### Technologies
+
+* Python
+* `urllib`
+* `urlparse`
+* `ssl`
+* `time`
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 06_website_status_checker
+```
+
+No additional packages are required.
+
+### Run
+
+```bash
+python website_status_checker.py
+```
+
+Example:
+
+```text
+Enter website URL: example.com
+
+Checking website...
+-------------------------------------------------------
+Website : https://example.com
+Status  : ONLINE
+HTTP Code: 200
+Response: 123.45 ms
+-------------------------------------------------------
+✅ Website is reachable.
+=======================================================
+```
+
+[View Website Status Checker →](./06_website_status_checker/)
+
+---
+
 # 📈 Learning Progress
 
 This repository represents my hands-on Python learning journey.
 
-## 🐍 Python Fundamentals
+## Python Fundamentals
 
 * [x] Variables and data types
 * [x] User input
@@ -268,6 +333,8 @@ This repository represents my hands-on Python learning journey.
 * [x] File paths
 * [x] Exception handling
 * [x] Arithmetic operations
+* [x] URL parsing
+* [x] Basic HTTP requests
 * [ ] Object-oriented programming
 * [ ] APIs
 * [ ] Multithreading
@@ -279,6 +346,10 @@ This repository represents my hands-on Python learning journey.
 * [x] Port scanning fundamentals
 * [x] Secure random generation
 * [x] Password generation
+* [x] HTTP/HTTPS fundamentals
+* [x] URL validation
+* [x] SSL/TLS basics
+* [x] Response-time measurement
 * [ ] Service detection
 * [ ] Banner grabbing
 * [ ] DNS tools
@@ -318,7 +389,6 @@ This repository represents my hands-on Python learning journey.
 
 Some projects planned for this repository:
 
-* 🌐 Website Status Checker
 * 🔎 DNS Lookup Tool
 * 📊 Log Analyzer
 * 🧮 CLI Calculator
@@ -345,7 +415,7 @@ Most projects require:
 * Python 3.8+
 * pip
 
-Check your Python installation:
+Check your Python version:
 
 ```bash
 python --version
@@ -402,8 +472,12 @@ python-mini-projects/
 │   ├── file_organizer.py
 │   └── README.md
 │
-└── 05_bill_splitter/
-    ├── bill_splitter.py
+├── 05_bill_splitter/
+│   ├── bill_splitter.py
+│   └── README.md
+│
+└── 06_website_status_checker/
+    ├── website_status_checker.py
     └── README.md
 ```
 
@@ -423,6 +497,7 @@ Instead of only learning Python through tutorials and theory, I am building smal
 * Security programming
 * Python modules
 * File handling
+* HTTP/HTTPS communication
 * Real-world application development
 
 Each project is added as I learn a new concept.
@@ -463,7 +538,13 @@ Each project is added as I learn a new concept.
 
 ### Project 06 — Website Status Checker
 
-**Focus:** HTTP requests and network automation
+**Focus:** HTTP/HTTPS communication, URL validation, networking, and error handling
+
+**Status:** ✅ Completed
+
+### Project 07 — DNS Lookup Tool
+
+**Focus:** DNS resolution and networking fundamentals
 
 **Status:** 🔜 Coming Soon
 
@@ -517,4 +598,4 @@ GitHub: [@Avinash-05-web](https://github.com/Avinash-05-web)
 
 If you find this repository useful, consider giving it a ⭐ on GitHub.
 
-More projects coming soon! 🚀
+More Python projects coming soon! 🚀
