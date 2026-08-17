@@ -15,8 +15,9 @@ The goal of this repository is to build small, useful projects while gradually m
 | 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                                | Python, secrets, string         | ✅ Completed    |
 | 04 | 📁 [File Organizer](./04_file_organizer/)         | Automatically organize files by extension                       | Python, OS, shutil              | ✅ Completed    |
 | 05 | 🧾 [Bill Splitter](./05_bill_splitter/)           | Calculate and split bills between multiple people               | Python, Tkinter                 | ✅ Completed    |
-| 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                    | Python, urllib, SSL              | ✅ Completed    |
-| 07 | 🔎 DNS Lookup Tool                                 | Look up DNS information for a domain                            | Python                          | 🔜 Coming Soon |
+| 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                    | Python, urllib, SSL             | ✅ Completed    |
+| 07 | 🔎 [DNS Lookup Tool](./07_dns_lookup_tool/)       | Look up DNS information for a domain                             | Python, Socket, IP Address      | ✅ Completed    |
+| 08 | 📊 Log Analyzer                                    | Analyze log files and identify useful information                | Python, File Handling            | 🔜 Coming Soon |
 
 ---
 
@@ -317,11 +318,81 @@ Response: 123.45 ms
 
 ---
 
+# 🔎 Project 07 — DNS Lookup Tool
+
+A simple and secure Python command-line tool that looks up DNS information for a domain.
+
+The program can find IPv4 addresses, IPv6 addresses, and the canonical hostname of a domain using Python's built-in networking modules.
+
+### Features
+
+* Look up DNS information
+* Find IPv4 addresses
+* Find IPv6 addresses
+* Find canonical hostname
+* Accept domains with or without HTTP/HTTPS
+* Basic domain validation
+* Handle invalid domains safely
+* No external packages required
+* Simple command-line interface
+
+### Technologies
+
+* Python
+* `socket`
+* `ipaddress`
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 07_dns_lookup_tool
+```
+
+No additional packages are required.
+
+### Run
+
+```bash
+python dns_lookup.py
+```
+
+Example:
+
+```text
+Enter a domain name: google.com
+
+Looking up DNS information for: google.com
+Please wait...
+
+============================================================
+              DNS LOOKUP RESULTS
+============================================================
+
+Domain: google.com
+
+IPv4 Addresses:
+  • 142.250.x.x
+
+IPv6 Addresses:
+  • 2a00:1450:xxxx::xxxx
+
+Canonical Hostname:
+  • google.com
+
+============================================================
+```
+
+[View DNS Lookup Tool →](./07_dns_lookup_tool/)
+
+---
+
 # 📈 Learning Progress
 
 This repository represents my hands-on Python learning journey.
 
-## Python Fundamentals
+## 🐍 Python Fundamentals
 
 * [x] Variables and data types
 * [x] User input
@@ -335,6 +406,8 @@ This repository represents my hands-on Python learning journey.
 * [x] Arithmetic operations
 * [x] URL parsing
 * [x] Basic HTTP requests
+* [x] DNS resolution
+* [x] IPv4 and IPv6
 * [ ] Object-oriented programming
 * [ ] APIs
 * [ ] Multithreading
@@ -350,9 +423,12 @@ This repository represents my hands-on Python learning journey.
 * [x] URL validation
 * [x] SSL/TLS basics
 * [x] Response-time measurement
+* [x] DNS fundamentals
+* [x] DNS resolution
+* [x] IPv4 and IPv6
 * [ ] Service detection
 * [ ] Banner grabbing
-* [ ] DNS tools
+* [ ] DNS record enumeration
 * [ ] Network automation
 * [ ] Log analysis
 * [ ] Security automation
@@ -389,7 +465,6 @@ This repository represents my hands-on Python learning journey.
 
 Some projects planned for this repository:
 
-* 🔎 DNS Lookup Tool
 * 📊 Log Analyzer
 * 🧮 CLI Calculator
 * 📝 Text Analyzer
@@ -476,8 +551,12 @@ python-mini-projects/
 │   ├── bill_splitter.py
 │   └── README.md
 │
-└── 06_website_status_checker/
-    ├── website_status_checker.py
+├── 06_website_status_checker/
+│   ├── website_status_checker.py
+│   └── README.md
+│
+└── 07_dns_lookup_tool/
+    ├── dns_lookup.py
     └── README.md
 ```
 
@@ -498,6 +577,7 @@ Instead of only learning Python through tutorials and theory, I am building smal
 * Python modules
 * File handling
 * HTTP/HTTPS communication
+* DNS resolution
 * Real-world application development
 
 Each project is added as I learn a new concept.
@@ -544,7 +624,13 @@ Each project is added as I learn a new concept.
 
 ### Project 07 — DNS Lookup Tool
 
-**Focus:** DNS resolution and networking fundamentals
+**Focus:** DNS resolution, domain validation, IPv4, IPv6, and networking fundamentals
+
+**Status:** ✅ Completed
+
+### Project 08 — Log Analyzer
+
+**Focus:** Log file analysis and security-related data processing
 
 **Status:** 🔜 Coming Soon
 
