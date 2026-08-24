@@ -8,16 +8,17 @@ The goal of this repository is to build small, useful projects while gradually m
 
 ## 📂 Projects
 
-| #  | Project                                           | Description                                                     | Technologies                    | Status         |
-| -- | ------------------------------------------------- | --------------------------------------------------------------- | ------------------------------- | -------------- |
-| 01 | 🔍 [Port Scanner](./01_port_scanner/)             | Scan TCP ports on an authorized device and identify open ports  | Python, Socket                  | ✅ Completed    |
-| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)   | Generate QR codes from URLs or text                             | Python, qrcode, Pillow, Tkinter | ✅ Completed    |
-| 03 | 🔐 [Password Generator](./03_password_generator/) | Generate secure random passwords                                | Python, secrets, string         | ✅ Completed    |
-| 04 | 📁 [File Organizer](./04_file_organizer/)         | Automatically organize files by extension                       | Python, OS, shutil              | ✅ Completed    |
-| 05 | 🧾 [Bill Splitter](./05_bill_splitter/)           | Calculate and split bills between multiple people               | Python, Tkinter                 | ✅ Completed    |
-| 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                    | Python, urllib, SSL             | ✅ Completed    |
-| 07 | 🔎 [DNS Lookup Tool](./07_dns_lookup_tool/)       | Look up DNS information for a domain                             | Python, Socket, IP Address      | ✅ Completed    |
-| 08 | 📊 Log Analyzer                                    | Analyze log files and identify useful information                | Python, File Handling            | 🔜 Coming Soon |
+| #  | Project                                                   | Description                                                     | Technologies                         | Status         |
+| -- | --------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------ | -------------- |
+| 01 | 🔍 [Port Scanner](./01_port_scanner/)                     | Scan TCP ports on an authorized device and identify open ports  | Python, Socket                       | ✅ Completed    |
+| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)           | Generate QR codes from URLs or text                             | Python, qrcode, Pillow, Tkinter      | ✅ Completed    |
+| 03 | 🔐 [Password Generator](./03_password_generator/)         | Generate secure random passwords                                | Python, secrets, string              | ✅ Completed    |
+| 04 | 📁 [File Organizer](./04_file_organizer/)                 | Automatically organize files by extension                       | Python, OS, shutil                   | ✅ Completed    |
+| 05 | 🧾 [Bill Splitter](./05_bill_splitter/)                   | Calculate and split bills between multiple people               | Python, Tkinter                      | ✅ Completed    |
+| 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                            | Python, urllib, SSL                  | ✅ Completed    |
+| 07 | 🔎 [DNS Lookup Tool](./07_dns_lookup_tool/)               | Look up DNS information for a domain                            | Python, Socket, IP Address           | ✅ Completed    |
+| 08 | 📊 [Log Analyzer](./08_log_analyzer/)                     | Analyze logs and identify useful information and security indicators | Python, Rich, Regex              | ✅ Completed    |
+| 09 | 🧮 CLI Calculator                                          | Perform mathematical calculations from the command line         | Python                                | 🔜 Coming Soon |
 
 ---
 
@@ -109,8 +110,8 @@ The project generates strong random passwords with support for uppercase letters
 ### Technologies
 
 * Python
-* secrets
-* string
+* `secrets`
+* `string`
 
 ### Installation
 
@@ -388,6 +389,105 @@ Canonical Hostname:
 
 ---
 
+# 📊 Project 08 — Log Analyzer
+
+A lightweight Python tool for analyzing Apache/Nginx-style access logs and extracting useful information.
+
+The project analyzes log entries and provides statistics such as IP addresses, HTTP status codes, request methods, requested paths, failed requests, errors, warnings, and basic suspicious request indicators.
+
+### Features
+
+* Analyze Apache/Nginx-style access logs
+* Count total log entries
+* Identify unique IP addresses
+* Find the most active IP addresses
+* Analyze HTTP status codes
+* Analyze HTTP request methods
+* Find frequently requested paths
+* Count failed requests
+* Detect errors and warnings
+* Identify basic suspicious request patterns
+* Display suspicious IP addresses
+* Clean terminal output using Rich
+* Application-level logging
+* Read-only log analysis
+* Lightweight implementation
+
+### Technologies
+
+* Python 3.8+
+* Rich
+* Regular Expressions
+* `pathlib`
+* `collections.Counter`
+* `argparse`
+* `logging`
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 08_log_analyzer
+```
+
+Install the required dependency:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+### Run
+
+Analyze the included sample log:
+
+```bash
+python log_analyzer.py sample.log
+```
+
+You can also analyze another log file:
+
+```bash
+python log_analyzer.py access.log
+```
+
+For help:
+
+```bash
+python log_analyzer.py --help
+```
+
+### Security Analysis
+
+The analyzer can identify basic suspicious request patterns such as:
+
+```text
+/admin
+/wp-admin
+/wp-login
+/phpmyadmin
+/.env
+/etc/passwd
+/config
+/login
+```
+
+These patterns can help identify potentially interesting activity, but a matching request **does not automatically mean that an attack occurred**.
+
+### Security & Privacy
+
+The analyzer processes log files locally and does not upload log contents anywhere.
+
+Real production logs may contain sensitive information such as IP addresses, usernames, URLs, session identifiers, and internal paths.
+
+**Do not upload private production logs to a public GitHub repository.**
+
+Use synthetic or sanitized logs for testing and demonstrations.
+
+[View Log Analyzer →](./08_log_analyzer/)
+
+---
+
 # 📈 Learning Progress
 
 This repository represents my hands-on Python learning journey.
@@ -408,6 +508,11 @@ This repository represents my hands-on Python learning journey.
 * [x] Basic HTTP requests
 * [x] DNS resolution
 * [x] IPv4 and IPv6
+* [x] Regular expressions
+* [x] Command-line arguments
+* [x] File handling
+* [x] Data aggregation
+* [x] Application logging
 * [ ] Object-oriented programming
 * [ ] APIs
 * [ ] Multithreading
@@ -426,11 +531,14 @@ This repository represents my hands-on Python learning journey.
 * [x] DNS fundamentals
 * [x] DNS resolution
 * [x] IPv4 and IPv6
+* [x] Log analysis
+* [x] Basic security indicators
+* [x] Suspicious request detection
 * [ ] Service detection
 * [ ] Banner grabbing
 * [ ] DNS record enumeration
 * [ ] Network automation
-* [ ] Log analysis
+* [ ] Advanced log analysis
 * [ ] Security automation
 * [ ] Cryptography fundamentals
 * [ ] Hashing
@@ -465,7 +573,6 @@ This repository represents my hands-on Python learning journey.
 
 Some projects planned for this repository:
 
-* 📊 Log Analyzer
 * 🧮 CLI Calculator
 * 📝 Text Analyzer
 * 🖥️ System Information Tool
@@ -478,6 +585,7 @@ Some projects planned for this repository:
 * 🧹 File Cleanup Utility
 * 📋 Expense Tracker
 * 📊 System Resource Monitor
+* 📡 Network Monitoring Tool
 
 More projects will be added as I continue learning.
 
@@ -502,7 +610,9 @@ If your system uses `python3`:
 python3 --version
 ```
 
-Some projects may require additional Python packages. Each project contains its own `README.md` with installation and usage instructions.
+Some projects may require additional Python packages.
+
+Each project contains its own `README.md` with installation and usage instructions.
 
 ---
 
@@ -555,8 +665,14 @@ python-mini-projects/
 │   ├── website_status_checker.py
 │   └── README.md
 │
-└── 07_dns_lookup_tool/
-    ├── dns_lookup.py
+├── 07_dns_lookup_tool/
+│   ├── dns_lookup.py
+│   └── README.md
+│
+└── 08_log_analyzer/
+    ├── log_analyzer.py
+    ├── sample.log
+    ├── requirements.txt
     └── README.md
 ```
 
@@ -578,6 +694,8 @@ Instead of only learning Python through tutorials and theory, I am building smal
 * File handling
 * HTTP/HTTPS communication
 * DNS resolution
+* Log analysis
+* Command-line tools
 * Real-world application development
 
 Each project is added as I learn a new concept.
@@ -630,7 +748,13 @@ Each project is added as I learn a new concept.
 
 ### Project 08 — Log Analyzer
 
-**Focus:** Log file analysis and security-related data processing
+**Focus:** Log parsing, data aggregation, command-line tools, and basic security analysis
+
+**Status:** ✅ Completed
+
+### Project 09 — CLI Calculator
+
+**Focus:** Python functions, user input, calculations, and command-line application development
 
 **Status:** 🔜 Coming Soon
 
@@ -640,7 +764,7 @@ Each project is added as I learn a new concept.
 
 Some projects in this repository involve networking and cybersecurity concepts.
 
-**Only use these tools on systems, devices, networks, and applications that you own or have explicit permission to test.**
+**Only use these tools on systems, devices, networks, applications, and log files that you own or have explicit permission to test or analyze.**
 
 The projects are provided for:
 
@@ -649,6 +773,7 @@ The projects are provided for:
 * Cybersecurity education
 * Personal development
 * Authorized security testing
+* Authorized log analysis
 
 The author is not responsible for misuse of these projects.
 
@@ -667,6 +792,8 @@ Do not upload:
 * Authentication credentials
 * Personal secrets
 * `.env` files containing secrets
+* Private production logs
+* Sensitive system information
 
 If a project requires credentials or API keys, use environment variables or another secure configuration method.
 
@@ -684,4 +811,41 @@ GitHub: [@Avinash-05-web](https://github.com/Avinash-05-web)
 
 If you find this repository useful, consider giving it a ⭐ on GitHub.
 
-More Python projects coming soon! 🚀
+More Python and cybersecurity projects coming soon! 🚀
+
+---
+
+## 📌 Current Progress
+
+```text
+🐍 Python Mini Projects
+
+01 🔍 Port Scanner
+   └── ✅ Completed
+
+02 📱 QR Code Generator
+   └── ✅ Completed
+
+03 🔐 Secure Password Generator
+   └── ✅ Completed
+
+04 📁 File Organizer
+   └── ✅ Completed
+
+05 🧾 Bill Splitter
+   └── ✅ Completed
+
+06 🌐 Website Status Checker
+   └── ✅ Completed
+
+07 🔎 DNS Lookup Tool
+   └── ✅ Completed
+
+08 📊 Log Analyzer
+   └── ✅ Completed
+
+09 🧮 CLI Calculator
+   └── 🔜 Coming Soon
+```
+
+**Keep building. Keep learning. Keep improving. 🚀**
