@@ -1,6 +1,3 @@
-Yep bro 😎 Here is the **complete `README.md` for Project 09**, all in **one single copyable block**.
-
-````markdown
 # 🧮 CLI Calculator
 
 A feature-rich command-line calculator built with Python.
