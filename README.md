@@ -8,17 +8,18 @@ The goal of this repository is to build small, useful projects while gradually m
 
 ## 📂 Projects
 
-| #  | Project                                                   | Description                                                     | Technologies                         | Status         |
-| -- | --------------------------------------------------------- | --------------------------------------------------------------- | ------------------------------------ | -------------- |
-| 01 | 🔍 [Port Scanner](./01_port_scanner/)                     | Scan TCP ports on an authorized device and identify open ports  | Python, Socket                       | ✅ Completed    |
-| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)           | Generate QR codes from URLs or text                             | Python, qrcode, Pillow, Tkinter      | ✅ Completed    |
-| 03 | 🔐 [Password Generator](./03_password_generator/)         | Generate secure random passwords                                | Python, secrets, string              | ✅ Completed    |
-| 04 | 📁 [File Organizer](./04_file_organizer/)                 | Automatically organize files by extension                       | Python, OS, shutil                   | ✅ Completed    |
-| 05 | 🧾 [Bill Splitter](./05_bill_splitter/)                   | Calculate and split bills between multiple people               | Python, Tkinter                      | ✅ Completed    |
-| 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                            | Python, urllib, SSL                  | ✅ Completed    |
-| 07 | 🔎 [DNS Lookup Tool](./07_dns_lookup_tool/)               | Look up DNS information for a domain                            | Python, Socket, IP Address           | ✅ Completed    |
-| 08 | 📊 [Log Analyzer](./08_log_analyzer/)                     | Analyze logs and identify useful information and security indicators | Python, Rich, Regex              | ✅ Completed    |
-| 09 | 🧮 CLI Calculator                                          | Perform mathematical calculations from the command line         | Python                                | 🔜 Coming Soon |
+| #  | Project                                                   | Description                                                        | Technologies                         | Status         |
+| -- | --------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------ | -------------- |
+| 01 | 🔍 [Port Scanner](./01_port_scanner/)                     | Scan TCP ports on an authorized device and identify open ports     | Python, Socket                       | ✅ Completed    |
+| 02 | 📱 [QR Code Generator](./02_qr_code_generator/)           | Generate QR codes from URLs or text                               | Python, qrcode, Pillow, Tkinter      | ✅ Completed    |
+| 03 | 🔐 [Password Generator](./03_password_generator/)         | Generate secure random passwords                                  | Python, secrets, string              | ✅ Completed    |
+| 04 | 📁 [File Organizer](./04_file_organizer/)                 | Automatically organize files by extension                         | Python, OS, shutil                   | ✅ Completed    |
+| 05 | 🧾 [Bill Splitter](./05_bill_splitter/)                   | Calculate and split bills between multiple people                 | Python, Tkinter                      | ✅ Completed    |
+| 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                              | Python, urllib, SSL                  | ✅ Completed    |
+| 07 | 🔎 [DNS Lookup Tool](./07_dns_lookup_tool/)               | Look up DNS information for a domain                              | Python, Socket, IP Address           | ✅ Completed    |
+| 08 | 📊 [Log Analyzer](./08_log_analyzer/)                     | Analyze logs and identify useful information and security indicators | Python, Rich, Regex               | ✅ Completed    |
+| 09 | 🧮 [CLI Calculator](./09_cli_calculator/)                 | Perform mathematical calculations from the command line            | Python, math, datetime               | ✅ Completed    |
+| 10 | 🖥️ System Information Tool                               | Display useful system information                                 | Python                                | 🔜 Coming Soon |
 
 ---
 
@@ -488,6 +489,97 @@ Use synthetic or sanitized logs for testing and demonstrations.
 
 ---
 
+# 🧮 Project 09 — CLI Calculator
+
+A feature-rich command-line calculator built with Python.
+
+The calculator supports multiple mathematical operations, calculation history, saving history to a file, input validation, error handling, and built-in help commands.
+
+### Features
+
+* Addition
+* Subtraction
+* Multiplication
+* Division
+* Modulus
+* Floor division
+* Power
+* Square root
+* Percentage calculations
+* Calculation history
+* Save history to a text file
+* Clear calculation history
+* Built-in help system
+* Continuous calculation loop
+* Input validation
+* Division-by-zero protection
+* Supports integers and decimal numbers
+* No external packages required
+
+### Technologies
+
+* Python
+* `math`
+* `datetime`
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 09_cli_calculator
+```
+
+No additional packages are required.
+
+### Run
+
+```bash
+python calculator.py
+```
+
+### Example
+
+```text
+============================================================
+                 🧮 CLI CALCULATOR
+============================================================
+
+Choose an operation:
+
+1.  Addition (+)
+2.  Subtraction (-)
+3.  Multiplication (*)
+4.  Division (/)
+5.  Modulus (%)
+6.  Floor Division (//)
+7.  Power (**)
+8.  Square Root (√)
+9.  Percentage (%)
+10. Calculation History
+11. Save History
+12. Clear History
+13. Help
+0.  Exit
+
+Enter your choice: 1
+
+Enter first number: 25
+Enter second number: 15
+
+✅ Result: 25 + 15 = 40
+```
+
+### Security
+
+The calculator intentionally does **not** use Python's `eval()` function to process user input.
+
+Instead, supported mathematical operations are handled through dedicated functions, keeping input processing controlled and predictable.
+
+[View CLI Calculator →](./09_cli_calculator/)
+
+---
+
 # 📈 Learning Progress
 
 This repository represents my hands-on Python learning journey.
@@ -513,6 +605,8 @@ This repository represents my hands-on Python learning journey.
 * [x] File handling
 * [x] Data aggregation
 * [x] Application logging
+* [x] Mathematical operations
+* [x] Error handling
 * [ ] Object-oriented programming
 * [ ] APIs
 * [ ] Multithreading
@@ -567,14 +661,22 @@ This repository represents my hands-on Python learning journey.
 * [ ] Automated file monitoring
 * [ ] Advanced automation workflows
 
+## 🧮 CLI Applications
+
+* [x] Command-line interfaces
+* [x] Menu-driven applications
+* [x] Input validation
+* [x] Calculation processing
+* [x] Error handling
+* [x] File-based history
+* [x] Built-in help systems
+
 ---
 
 # 🚀 Upcoming Projects
 
 Some projects planned for this repository:
 
-* 🧮 CLI Calculator
-* 📝 Text Analyzer
 * 🖥️ System Information Tool
 * 🔗 URL Utilities
 * 📡 Network Utilities
@@ -586,6 +688,8 @@ Some projects planned for this repository:
 * 📋 Expense Tracker
 * 📊 System Resource Monitor
 * 📡 Network Monitoring Tool
+* 🔐 Hashing Utility
+* 📝 Text Processing Tool
 
 More projects will be added as I continue learning.
 
@@ -669,10 +773,14 @@ python-mini-projects/
 │   ├── dns_lookup.py
 │   └── README.md
 │
-└── 08_log_analyzer/
-    ├── log_analyzer.py
-    ├── sample.log
-    ├── requirements.txt
+├── 08_log_analyzer/
+│   ├── log_analyzer.py
+│   ├── sample.log
+│   ├── requirements.txt
+│   └── README.md
+│
+└── 09_cli_calculator/
+    ├── calculator.py
     └── README.md
 ```
 
@@ -696,6 +804,8 @@ Instead of only learning Python through tutorials and theory, I am building smal
 * DNS resolution
 * Log analysis
 * Command-line tools
+* Mathematical programming
+* Error handling
 * Real-world application development
 
 Each project is added as I learn a new concept.
@@ -754,7 +864,13 @@ Each project is added as I learn a new concept.
 
 ### Project 09 — CLI Calculator
 
-**Focus:** Python functions, user input, calculations, and command-line application development
+**Focus:** Mathematical operations, command-line applications, input validation, and error handling
+
+**Status:** ✅ Completed
+
+### Project 10 — System Information Tool
+
+**Focus:** System information, hardware details, operating system information, and Python system utilities
 
 **Status:** 🔜 Coming Soon
 
@@ -845,7 +961,7 @@ More Python and cybersecurity projects coming soon! 🚀
    └── ✅ Completed
 
 09 🧮 CLI Calculator
-   └── 🔜 Coming Soon
-```
+   └── ✅ Completed
 
-**Keep building. Keep learning. Keep improving. 🚀**
+10 🖥️ System Information Tool
+   └── 🔜 Coming Soon
