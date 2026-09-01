@@ -17,9 +17,10 @@ The goal of this repository is to build small, useful projects while gradually m
 | 05 | 🧾 [Bill Splitter](./05_bill_splitter/)                   | Calculate and split bills between multiple people                 | Python, Tkinter                      | ✅ Completed    |
 | 06 | 🌐 [Website Status Checker](./06_website_status_checker/) | Check whether websites are reachable                              | Python, urllib, SSL                  | ✅ Completed    |
 | 07 | 🔎 [DNS Lookup Tool](./07_dns_lookup_tool/)               | Look up DNS information for a domain                              | Python, Socket, IP Address           | ✅ Completed    |
-| 08 | 📊 [Log Analyzer](./08_log_analyzer/)                     | Analyze logs and identify useful information and security indicators | Python, Rich, Regex               | ✅ Completed    |
+| 08 | 📊 [Log Analyzer](./08_log_analyzer/)                     | Analyze logs and identify useful information and security indicators | Python, Rich, Regex                | ✅ Completed    |
 | 09 | 🧮 [CLI Calculator](./09_cli_calculator/)                 | Perform mathematical calculations from the command line            | Python, math, datetime               | ✅ Completed    |
-| 10 | 🖥️ System Information Tool                               | Display useful system information                                 | Python                                | 🔜 Coming Soon |
+| 10 | 🖥️ [System Information Tool](./10_system_information_tool/) | Display useful local system information                         | Python, platform, socket, shutil      | ✅ Completed    |
+| 11 | 🔐 File Encryption Tool                                    | Encrypt and decrypt files securely                                 | Python                               | 🔜 Coming Soon |
 
 ---
 
@@ -580,6 +581,141 @@ Instead, supported mathematical operations are handled through dedicated functio
 
 ---
 
+# 🖥️ Project 10 — System Information Tool
+
+A lightweight and secure Python command-line tool that displays useful information about the local computer system.
+
+The tool collects basic operating system, CPU, memory, disk, network, Python, and runtime information using Python's standard library.
+
+### Features
+
+* Operating system information
+* OS version and release
+* System architecture
+* CPU information
+* Logical CPU core count
+* RAM information
+* Disk usage information
+* Hostname
+* Local IP address
+* Python version
+* System uptime
+* Current system time
+* Human-readable disk sizes
+* Read-only operation
+* Safe error handling
+* Cross-platform design
+* No external packages required
+
+### Technologies
+
+* Python
+* `platform`
+* `socket`
+* `os`
+* `getpass`
+* `shutil`
+* `ctypes`
+* `datetime`
+
+### Installation
+
+Go to the project directory:
+
+```bash
+cd 10_system_information_tool
+```
+
+No additional packages are required.
+
+### Run
+
+```bash
+python system_info.py
+```
+
+Example:
+
+```text
+============================================================
+          🖥️ SYSTEM INFORMATION TOOL
+============================================================
+
+Collecting system information...
+
+============================================================
+  🖥️ SYSTEM INFORMATION
+============================================================
+Operating System   : Windows
+OS Version         : ...
+OS Release         : 11
+Architecture       : AMD64
+Processor          : ...
+Hostname           : MY-PC
+Username           : User
+Python Version     : 3.12.5
+
+============================================================
+  ⚙️ CPU INFORMATION
+============================================================
+Logical CPU Cores  : 12
+
+============================================================
+  🧠 MEMORY INFORMATION
+============================================================
+Total RAM          : 15.87 GB
+Available RAM      : 7.42 GB
+Used RAM           : 8.45 GB
+Memory Usage       : 53%
+
+============================================================
+  💾 DISK INFORMATION
+============================================================
+
+Drive: C:\
+  Total : 476.84 GB
+  Used  : 245.31 GB
+  Free  : 231.53 GB
+  Usage : 51.4%
+
+============================================================
+  🌐 NETWORK INFORMATION
+============================================================
+Hostname           : MY-PC
+Local IP Address   : 192.168.1.10
+
+============================================================
+  ⏱️ RUNTIME INFORMATION
+============================================================
+Current Time       : 2026-09-01 13:30:00
+System Uptime      : 2d 5h 32m 18s
+
+============================================================
+✅ Information collection completed.
+============================================================
+```
+
+### Security & Privacy
+
+The tool operates locally and in a read-only manner.
+
+It does not:
+
+* Modify system settings
+* Modify files
+* Install software
+* Execute shell commands
+* Collect passwords
+* Collect browser data
+* Collect private keys
+* Scan other devices
+* Upload system information to external servers
+* Require administrator/root privileges
+
+[View System Information Tool →](./10_system_information_tool/)
+
+---
+
 # 📈 Learning Progress
 
 This repository represents my hands-on Python learning journey.
@@ -591,6 +727,7 @@ This repository represents my hands-on Python learning journey.
 * [x] Conditional statements
 * [x] Loops
 * [x] Lists
+* [x] Dictionaries
 * [x] Functions
 * [x] Modules
 * [x] File paths
@@ -606,6 +743,9 @@ This repository represents my hands-on Python learning journey.
 * [x] Data aggregation
 * [x] Application logging
 * [x] Mathematical operations
+* [x] System information APIs
+* [x] Cross-platform programming
+* [x] Input validation
 * [x] Error handling
 * [ ] Object-oriented programming
 * [ ] APIs
@@ -670,6 +810,8 @@ This repository represents my hands-on Python learning journey.
 * [x] Error handling
 * [x] File-based history
 * [x] Built-in help systems
+* [x] System information display
+* [x] Command-line utilities
 
 ---
 
@@ -677,12 +819,9 @@ This repository represents my hands-on Python learning journey.
 
 Some projects planned for this repository:
 
-* 🖥️ System Information Tool
-* 🔗 URL Utilities
-* 📡 Network Utilities
 * 🔐 File Encryption Tool
-* 📊 Password Strength Analyzer
 * 🌐 HTTP Header Checker
+* 📊 Password Strength Analyzer
 * 📂 Duplicate File Finder
 * 🧹 File Cleanup Utility
 * 📋 Expense Tracker
@@ -690,6 +829,8 @@ Some projects planned for this repository:
 * 📡 Network Monitoring Tool
 * 🔐 Hashing Utility
 * 📝 Text Processing Tool
+* 🔎 Advanced DNS Lookup Tool
+* 🛡️ Security Log Monitor
 
 More projects will be added as I continue learning.
 
@@ -805,6 +946,7 @@ Instead of only learning Python through tutorials and theory, I am building smal
 * Log analysis
 * Command-line tools
 * Mathematical programming
+* System programming
 * Error handling
 * Real-world application development
 
@@ -870,7 +1012,13 @@ Each project is added as I learn a new concept.
 
 ### Project 10 — System Information Tool
 
-**Focus:** System information, hardware details, operating system information, and Python system utilities
+**Focus:** System information, hardware details, operating system information, networking, and Python system utilities
+
+**Status:** ✅ Completed
+
+### Project 11 — File Encryption Tool
+
+**Focus:** File encryption, cryptography fundamentals, secure file handling, and Python security programming
 
 **Status:** 🔜 Coming Soon
 
@@ -910,6 +1058,7 @@ Do not upload:
 * `.env` files containing secrets
 * Private production logs
 * Sensitive system information
+* Encryption keys
 
 If a project requires credentials or API keys, use environment variables or another secure configuration method.
 
@@ -964,4 +1113,10 @@ More Python and cybersecurity projects coming soon! 🚀
    └── ✅ Completed
 
 10 🖥️ System Information Tool
+   └── ✅ Completed
+
+11 🔐 File Encryption Tool
    └── 🔜 Coming Soon
+```
+
+**Keep building. Keep learning. Keep improving. 🚀**
