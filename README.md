@@ -1,6 +1,6 @@
 # 🐍 Python Mini Projects
 
-A collection of practical Python projects created while learning Python programming, automation, networking, GUI development, CLI applications, and cybersecurity fundamentals.
+A collection of practical Python projects created while learning Python programming, automation, networking, GUI development, CLI applications, cybersecurity, cryptography, and file security.
 
 The goal of this repository is to build small, useful, and practical projects while gradually moving from beginner Python concepts to more advanced real-world applications.
 
@@ -21,7 +21,8 @@ The goal of this repository is to build small, useful, and practical projects wh
 | 09 | 🧮 [CLI Calculator](./09_cli_calculator/) | Feature-rich command-line calculator with history | Python, argparse, math | ✅ Completed |
 | 10 | 🖥️ [System Information Tool](./10_system_information_tool/) | Display useful local system information | Python, platform, socket, shutil | ✅ Completed |
 | 11 | 🔐 [File Encryption Tool](./11_file_encryption_tool/) | Encrypt and decrypt files securely | Python, cryptography, Scrypt, AES-GCM | ✅ Completed |
-| 12 | 🔎 Hashing Utility | Generate and verify file hashes | Python, hashlib | 🚧 Coming Soon |
+| 12 | 🔎 [Hashing Utility](./12_hashing_utility/) | Generate and verify file hashes and integrity manifests | Python, hashlib, pathlib, argparse | ✅ Completed |
+| 13 | 🛡️ Security Tool | Practical security-focused Python utility | Python, Cybersecurity | 🚧 Coming Soon |
 
 ---
 
@@ -29,13 +30,13 @@ The goal of this repository is to build small, useful, and practical projects wh
 
 ## 01 — 🔎 Port Scanner
 
-A basic TCP port scanner built using Python's `socket` module.
+A TCP port scanner built using Python's `socket` module.
 
 ### Features
 
 - Scan individual TCP ports
 - Check whether a port is open or closed
-- Accept a target IP address
+- Accept target IP addresses
 - Simple command-line interface
 - Fast and lightweight
 
@@ -70,16 +71,6 @@ A QR code generator capable of converting URLs and text into QR codes.
 - Pillow
 - Tkinter
 
-### Example
-
-```text
-Enter URL
-   ↓
-Generate QR Code
-   ↓
-Save QR Image
-````
-
 ---
 
 ## 03 — 🔐 Password Generator
@@ -88,19 +79,19 @@ A customizable password generator designed to create strong random passwords.
 
 ### Features
 
-* Secure random password generation
-* Custom password length
-* Uppercase letters
-* Lowercase letters
-* Numbers
-* Special characters
-* Password strength detection
+- Secure random password generation
+- Custom password length
+- Uppercase letters
+- Lowercase letters
+- Numbers
+- Special characters
+- Password strength detection
 
 ### Technologies
 
-* Python
-* `secrets`
-* `string`
+- Python
+- `secrets`
+- `string`
 
 ### Security
 
@@ -114,17 +105,17 @@ An automation tool that organizes files into folders based on their file extensi
 
 ### Features
 
-* Detect file extensions
-* Create folders automatically
-* Move files into appropriate folders
-* Reduce folder clutter
-* Automate repetitive file organization
+- Detect file extensions
+- Create folders automatically
+- Move files into appropriate folders
+- Reduce folder clutter
+- Automate repetitive file organization
 
 ### Technologies
 
-* Python
-* `os`
-* `shutil`
+- Python
+- `os`
+- `shutil`
 
 ### Example
 
@@ -135,7 +126,7 @@ Downloads/
 ├── document.pdf
 ├── song.mp3
 └── video.mp4
-```
+````
 
 Becomes:
 
@@ -233,22 +224,6 @@ A DNS lookup utility for retrieving basic domain and hostname information.
 * `socket`
 * `ipaddress`
 
-### Example
-
-```text
-Domain:
-example.com
-
-IPv4:
-93.x.x.x
-
-IPv6:
-...
-
-Canonical Hostname:
-...
-```
-
 ---
 
 ## 08 — 📊 Log Analyzer
@@ -279,8 +254,6 @@ An Apache/Nginx-style web server log analyzer designed to help understand server
 * Rich
 
 ### Security Concepts
-
-The project introduces concepts such as:
 
 * Log analysis
 * Threat detection
@@ -376,7 +349,7 @@ It does not:
 
 # 11 — 🔐 File Encryption Tool
 
-A command-line file encryption and decryption tool built using modern authenticated cryptography.
+A command-line file encryption and decryption tool using modern authenticated cryptography.
 
 This project represents a major step into cybersecurity and cryptography.
 
@@ -408,30 +381,6 @@ This project represents a major step into cybersecurity and cryptography.
 * `getpass`
 * `secrets`
 * `pathlib`
-
-### Encryption Architecture
-
-```text
-Password
-    │
-    ▼
-Random Salt
-    │
-    ▼
-Scrypt
-    │
-    ▼
-256-bit Encryption Key
-    │
-    ▼
-AES-256-GCM
-    │
-    ▼
-Encrypted Chunks
-    │
-    ▼
-Encrypted File
-```
 
 ### Basic Usage
 
@@ -469,22 +418,133 @@ This project is intended for educational purposes and has not undergone a formal
 
 # 12 — 🔎 Hashing Utility
 
+An advanced command-line file hashing and integrity verification utility.
+
+The project goes beyond simply generating a hash by supporting file verification and directory-wide checksum manifests.
+
+### Features
+
+* 🔎 Generate file hashes
+* 🔐 SHA-256
+* 🔐 SHA-512
+* 🔐 SHA-1
+* 🔐 MD5
+* 📦 Chunked file processing
+* ⚡ Large-file support
+* 📊 Hashing progress
+* 📁 Directory scanning
+* 📝 Checksum manifest generation
+* ✅ Individual file verification
+* 🔍 Manifest verification
+* 🚫 Detect modified files
+* 🚫 Detect missing files
+* 🖥️ Command-line interface
+* ❌ No external dependencies
+* ❌ No shell commands
+* ❌ No `eval()`
+
+### Technologies
+
+* Python
+* `hashlib`
+* `pathlib`
+* `argparse`
+* `sys`
+* Type hints
+
+### Basic Usage
+
+Generate SHA-256:
+
+```bash
+python hashing_utility.py hash test.txt
+```
+
+Generate SHA-512:
+
+```bash
+python hashing_utility.py hash test.txt --algorithm sha512
+```
+
+Show progress:
+
+```bash
+python hashing_utility.py hash large_file.zip --progress
+```
+
+Verify a file:
+
+```bash
+python hashing_utility.py verify test.txt YOUR_HASH_HERE
+```
+
+Generate a directory manifest:
+
+```bash
+python hashing_utility.py manifest test_folder
+```
+
+Verify a manifest:
+
+```bash
+python hashing_utility.py check-manifest checksums.sha256
+```
+
+### Integrity Workflow
+
+```text
+File
+ ↓
+SHA-256
+ ↓
+Known Hash
+ ↓
+Compare Later
+ ↓
+Integrity Verification
+```
+
+For directories:
+
+```text
+Directory
+     ↓
+Hash Every File
+     ↓
+Generate Manifest
+     ↓
+Store Hashes
+     ↓
+Verify Later
+     ↓
+Detect Changes
+```
+
+### Security Note
+
+SHA-256 and SHA-512 are recommended for new general-purpose integrity checks.
+
+MD5 and SHA-1 are included mainly for compatibility and educational purposes because they have known collision weaknesses.
+
+---
+
+# 13 — 🛡️ Security Tool
+
 🚧 **Coming Soon**
 
-The next project will introduce file and data hashing using Python's built-in `hashlib` module.
+The next project will continue expanding the cybersecurity side of the repository.
 
-Planned concepts include:
+The exact project will be selected based on the learning progression and will introduce additional practical security concepts.
 
-* MD5
-* SHA-1
-* SHA-256
-* SHA-512
-* File integrity verification
-* Hash comparison
-* Checksum generation
-* Command-line usage
+Possible areas include:
 
-This project will build on the security concepts introduced in the File Encryption Tool.
+* Network security
+* File integrity
+* HTTP security
+* Password security
+* System monitoring
+* Security automation
+* Defensive analysis
 
 ---
 
@@ -504,6 +564,9 @@ This project will build on the security concepts introduced in the File Encrypti
 * [x] Data structures
 * [x] Regular expressions
 * [x] Binary data handling
+* [x] Type hints
+* [x] CLI architecture
+* [x] Exit codes
 
 ---
 
@@ -517,9 +580,17 @@ This project will build on the security concepts introduced in the File Encrypti
 * [x] Web server log analysis
 * [x] Suspicious request detection
 * [x] Password generation
+* [x] Password security concepts
 * [x] Cryptographic key derivation
 * [x] Authenticated encryption
-* [x] File integrity concepts
+* [x] AES-256-GCM
+* [x] Scrypt
+* [x] File encryption
+* [x] Cryptographic hashing
+* [x] SHA-256
+* [x] SHA-512
+* [x] File integrity verification
+* [x] Checksum manifests
 
 ---
 
@@ -531,6 +602,7 @@ This project will build on the security concepts introduced in the File Encrypti
 * [x] Buttons and events
 * [x] GUI calculations
 * [x] QR code generation GUI
+* [x] Bill splitting GUI
 
 ---
 
@@ -542,6 +614,7 @@ This project will build on the security concepts introduced in the File Encrypti
 * [x] File movement
 * [x] Log processing
 * [x] System information collection
+* [x] Automated integrity checking
 
 ---
 
@@ -554,11 +627,14 @@ This project will build on the security concepts introduced in the File Encrypti
 * [x] CLI error handling
 * [x] Help menus
 * [x] Calculation history
-* [x] Encryption/decryption commands
+* [x] File hashing commands
+* [x] File verification commands
+* [x] Directory manifest commands
+* [x] Manifest verification
 
 ---
 
-## 🔐 Cryptography
+## 🔐 Cryptography & Data Security
 
 * [x] Secure random generation
 * [x] Password security
@@ -570,6 +646,11 @@ This project will build on the security concepts introduced in the File Encrypti
 * [x] Authentication tags
 * [x] Nonce management
 * [x] Encrypted file formats
+* [x] Cryptographic hashing
+* [x] SHA-256
+* [x] SHA-512
+* [x] File integrity
+* [x] Checksum verification
 
 ---
 
@@ -579,16 +660,16 @@ The repository will continue expanding with progressively more advanced projects
 
 Possible future projects include:
 
-* 🔎 Hashing Utility
-* 🗃️ Secure File Integrity Checker
+* 🛡️ Security-focused Python utility
 * 🌐 HTTP Header Security Checker
-* 🔑 API Key Generator
+* 🔐 Secure Notes Application
 * 📡 Network Service Checker
 * 🛡️ Password Strength Analyzer
 * 📋 System Resource Monitor
 * 📊 Security Log Dashboard
-* 🔐 Secure Notes Application
+* 🔍 File Integrity Monitor
 * 🌐 Network Monitoring Tool
+* 🔑 Security Automation Tools
 
 The exact order may change as the learning path develops.
 
@@ -599,12 +680,13 @@ The exact order may change as the learning path develops.
 Most projects require:
 
 * Python 3.9+
-* `pip`
 * Windows, Linux, or macOS
 
 Some projects require additional Python packages.
 
 Always check the individual project's `README.md` and `requirements.txt`.
+
+Project 12 currently requires **no external packages**.
 
 ---
 
@@ -627,39 +709,13 @@ Each project is independent.
 For example:
 
 ```bash
-cd 11_file_encryption_tool
+cd 12_hashing_utility
 ```
 
-Create a virtual environment:
-
-### Windows
+Then run:
 
 ```bash
-python -m venv venv
-```
-
-Activate:
-
-```bash
-venv\Scripts\activate
-```
-
-### Linux/macOS
-
-```bash
-python3 -m venv venv
-```
-
-Activate:
-
-```bash
-source venv/bin/activate
-```
-
-Then install that project's dependencies:
-
-```bash
-pip install -r requirements.txt
+python hashing_utility.py --help
 ```
 
 ---
@@ -717,6 +773,10 @@ python-mini-projects/
 │   └── README.md
 │
 ├── 12_hashing_utility/
+│   ├── hashing_utility.py
+│   └── README.md
+│
+├── 13_security_tool/
 │   └── Coming Soon
 │
 └── README.md
@@ -757,47 +817,22 @@ Cybersecurity
 Cryptography
    │
    ▼
+File Security
+   │
+   ▼
 Advanced Python Projects
 ```
 
 ---
 
-# 📊 Project Progress
+# 🧪 Development Workflow
 
-Current progress:
-
-```text
-Completed Projects: 11
-Next Project: 12
-```
-
-Progress:
-
-```text
-01 ✅
-02 ✅
-03 ✅
-04 ✅
-05 ✅
-06 ✅
-07 ✅
-08 ✅
-09 ✅
-10 ✅
-11 ✅
-12 🚧
-```
-
----
-
-# 🧪 Development Approach
-
-Each project follows a simple learning workflow:
+Each project follows a practical learning workflow:
 
 ```text
 1. Choose a practical problem
         ↓
-2. Learn the required Python concepts
+2. Learn the required concepts
         ↓
 3. Build the project
         ↓
@@ -830,6 +865,7 @@ The projects aim to practice:
 * Authentication
 * Encryption
 * Data integrity
+* Hashing
 * Safe command-line handling
 * Avoiding dangerous dynamic execution
 
@@ -929,7 +965,7 @@ Starting from simple projects such as:
 
 ```text
 Port Scanner
-QR Generator
+QR Code Generator
 Password Generator
 ```
 
@@ -943,15 +979,46 @@ Log Analysis
 CLI Applications
 Cryptography
 File Encryption
+File Hashing
+Integrity Verification
 ```
 
 The goal is to keep improving one project at a time.
 
 ---
 
-# 🏁 Current Milestone
+# 📊 Project Progress
 
-## 11 Projects Completed 🎉
+Current progress:
+
+```text
+Completed Projects: 12
+Next Project: 13
+```
+
+Progress:
+
+```text
+01 ✅
+02 ✅
+03 ✅
+04 ✅
+05 ✅
+06 ✅
+07 ✅
+08 ✅
+09 ✅
+10 ✅
+11 ✅
+12 ✅
+13 🚧
+```
+
+---
+
+# 🏆 Current Milestone
+
+## 12 Projects Completed 🎉
 
 ```text
 🐍 Python
@@ -964,14 +1031,18 @@ The goal is to keep improving one project at a time.
       +
 💻 CLI Applications
       +
+📊 Log Analysis
+      +
 🔐 Cybersecurity
       +
 🛡️ Cryptography
+      +
+🔎 File Integrity
 ```
 
-**11 projects completed.**
+**12 projects completed.**
 
-**Project 12 is next.** 🚀
+**Project 13 is next.** 🚀
 
 ---
 
@@ -981,6 +1052,6 @@ The goal is to keep improving one project at a time.
 
 This repository is built one project at a time, with each project introducing new concepts and improving practical Python skills.
 
-**Project 11 — File Encryption Tool 🔐**
+**Project 12 — Hashing Utility 🔎**
 
-**Next → Project 12 — Hashing Utility 🔎**
+**Next → Project 13 — Security Tool 🛡️**
